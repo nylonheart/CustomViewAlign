@@ -1,3 +1,13 @@
+bl_info = {
+    "name": "NH_CustomViewAlign",
+    "author": "Nylonheart",
+    "version": (1, 0, 1),
+    "blender": (4, 3, 0),
+    "location": "3D View > Sidebar > Nylonheart",
+    "description": "Pick an object or bone and align the view to a specific axis, or create a custom Transform Orientation",
+    "category": "3D View",
+}
+
 import bpy
 from mathutils import Quaternion
 
