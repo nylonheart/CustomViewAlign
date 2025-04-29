@@ -23,8 +23,8 @@ def _axis_quaternion(axis: str) -> Quaternion:
     lut = {
         "X": Quaternion((0.5, 0.5, 0.5, 0.5)),
         "-X": Quaternion((-0.5, -0.5, 0.5, 0.5)),
-        "Y": Quaternion((0.7071, 0.7071, 0, 0)),
-        "-Y": Quaternion((0, 0, -0.7071, -0.7071)),
+        "-Y": Quaternion((0.7071, 0.7071, 0, 0)),
+        "Y": Quaternion((0, 0, -0.7071, -0.7071)),
         "Z": Quaternion((1, 0, 0, 0)),
         "-Z": Quaternion((0, 1, 0, 0)),
     }
@@ -214,7 +214,7 @@ class VIEW3D_PT_CustomViewAlign(bpy.types.Panel):
         layout.label(text=f"Picked: {picked}")
 
         col = layout.column(align=True)
-        for axis_pair in ((('-Y', '+Y'),), (('X', '-X'),), (('Z', '-Z'),)):
+        for axis_pair in ((('Y', '-Y'),), (('X', '-X'),), (('Z', '-Z'),)):
             row = col.row(align=True)
             for label in axis_pair[0]:
                 row.operator("view3d.align_view", text=label).axis = label
